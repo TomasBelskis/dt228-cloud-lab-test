@@ -21,13 +21,23 @@ public class LabTestServlet extends HttpServlet {
 		int numC = Integer.parseInt(CString);
 		int numD = Integer.parseInt(DString);
 		
-		int result = (numA-numB) * (numC - numD);
+		
 		
 		if(AString==""&&BString==""&&BString==""&&BString=="")
 		{
 			resp.getWriter().println("You have to enter values for A,B,C,D ");
+		}
+		if(numA<numB)
+		{
+			resp.getWriter().println("A cant be less than B ");
+		}
+		else if(numC<numD)
+		{
+			resp.getWriter().println("C cant be less than D");
 		}else{
+			int result = (numA-numB) * (numC - numD);
 			resp.getWriter().println("(A:"+AString+ "-" + "B"+BString+")"+"*"+"(C:"+CString+"-"+"D:"+DString+")"+"Result="+""+ result);
 		}
+		
 	}
 }
